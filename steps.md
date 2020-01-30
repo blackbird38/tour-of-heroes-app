@@ -33,4 +33,8 @@ You define private styles either inline in the ```@Component.styles``` array or 
 
 ```<li *ngFor="let hero of heroes" (click)="onSelect(hero)">``` This is an example of Angular's event binding syntax. The parentheses around ```click``` tell Angular to listen for the ```<li>``` element's click event. When the user clicks in the ```<li>```, Angular executes the ```onSelect(hero)``` expression.
 
-Angular's ```*ngIf``` directive: ```<div *ngIf="selectedHero"></div>``` The component should only display the selected hero details if the selectedHero exists.
+Use Angular's ```*ngIf``` directive to conditionally include or exclude a block of HTML: ```<div *ngIf="selectedHero"></div>``` The component should only display the selected hero details if the selectedHero exists.
+
+Toggle a CSS style class with a class binding: ```[class.selected]="hero === selectedHero"``` - when the current row hero is the same as the selectedHero, Angular adds the selected CSS class. When the two heroes are different, Angular removes the class.
+
+#### ```ng generate component hero-detail```
