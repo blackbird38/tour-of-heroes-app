@@ -53,4 +53,4 @@ To learn more about providers, see [Providers](https://angular.io/guide/provider
 Observable is one of the key classes in the [RxJS library](https://rxjs-dev.firebaseapp.com/).
 Angular's HttpClient methods return RxJS Observables. [tuto](https://angular.io/tutorial/toh-pt6)
 
-
+#### ```ng generate component messages```
