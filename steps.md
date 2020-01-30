@@ -16,3 +16,7 @@ cli- Command-line interface
 
 application shell
 {{title}} the double curly braces are Angular's interpolation binding syntax
+src/styles.css - Put your application-wide styles here.
+
+#### ng generate component heroes
+The ngOnInit() is a lifecycle hook. Angular calls ngOnInit() shortly after creating a component. It's a good place to put initialization logic.
