@@ -12,6 +12,7 @@ import { Injectable } from '@angular/core';
 import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 import { Observable, of } from 'rxjs';
+import { MessageService } from './message.service';
 
 @Injectable({
   /*making the HeroService available to the dependency injection system by registering a provider.
@@ -24,10 +25,14 @@ and injects into any class that asks for it.*/
 
 export class HeroService {
 
-  constructor() { }
+  /*This is a typical "service-in-service" scenario: you inject the MessageService into the HeroService which is
+  injected into the HeroesComponent.*/
+  constructor(private messageService: MessageService) { }
 
   /*to return the mock heroes*/
   getHeroes(): Observable<Hero[]> {
+    // TODO: send the message _after_ fetching the heroes
+    this.messageService.add('HeroService: fetched heroes');
     return of(HEROES); /*returns an Observable<Hero[]> that emits a single value, the array of mock heroes.*/
   }
 }
