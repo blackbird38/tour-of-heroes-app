@@ -38,3 +38,7 @@ Use Angular's ```*ngIf``` directive to conditionally include or exclude a block 
 Toggle a CSS style class with a class binding: ```[class.selected]="hero === selectedHero"``` - when the current row hero is the same as the selectedHero, Angular adds the selected CSS class. When the two heroes are different, Angular removes the class.
 
 #### ```ng generate component hero-detail```
+
+* created a separate, reusable HeroDetailComponent.
+* used a property binding to give the parent HeroesComponent control over the child HeroDetailComponent.
+* used the @Input decorator to make the hero property available for binding by the external HeroesComponent.
