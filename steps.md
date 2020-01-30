@@ -74,4 +74,15 @@ Summary
 * --module=app tells the CLI to register it in the imports array of the AppModule
 
 #### ```ng generate component dashboard```
+* added the Angular router to navigate among different components.
+* turned the AppComponent into a navigation shell with <a> links and a <router-outlet>.
+* configured the router in an AppRoutingModule
+* defined simple routes, a redirect route, and a parameterized route.
+* used the routerLink directive in anchor elements.
+* refactored a tightly-coupled master/detail view into a routed detail view.
+* used router link parameters to navigate to the detail view of a user-selected hero.
+* shared the HeroService among multiple components.
+
+
+
 
