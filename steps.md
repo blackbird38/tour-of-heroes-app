@@ -49,3 +49,8 @@ Why? Components should focus on presenting data and delegate data access to a se
 
 #### ```ng generate service hero```
 To learn more about providers, see [Providers](https://angular.io/guide/providers). To learn more about injectors, see the [Dependency Injection guide](https://angular.io/guide/dependency-injection).
+
+Observable is one of the key classes in the [RxJS library](https://rxjs-dev.firebaseapp.com/).
+Angular's HttpClient methods return RxJS Observables. [tuto](https://angular.io/tutorial/toh-pt6)
+
+

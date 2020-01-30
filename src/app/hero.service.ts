@@ -11,6 +11,7 @@ with the @Injectable() decorator. This marks the class as one that participates 
 import { Injectable } from '@angular/core';
 import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   /*making the HeroService available to the dependency injection system by registering a provider.
@@ -26,7 +27,7 @@ export class HeroService {
   constructor() { }
 
   /*to return the mock heroes*/
-  getHeroes(): Hero[] {
-    return HEROES;
+  getHeroes(): Observable<Hero[]> {
+    return of(HEROES); /*returns an Observable<Hero[]> that emits a single value, the array of mock heroes.*/
   }
 }
