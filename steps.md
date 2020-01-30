@@ -54,3 +54,5 @@ Observable is one of the key classes in the [RxJS library](https://rxjs-dev.fire
 Angular's HttpClient methods return RxJS Observables. [tuto](https://angular.io/tutorial/toh-pt6)
 
 #### ```ng generate component messages```
+
+#### ```ng generate service message```
