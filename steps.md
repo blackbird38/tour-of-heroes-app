@@ -27,3 +27,4 @@ The ```ngOnInit()``` is a lifecycle hook. Angular calls ```ngOnInit()``` shortly
 [Pipes](https://angular.io/guide/pipes) are a good way to format strings, currency amounts, dates and other display data. Angular ships with several built-in pipes and you can create your own.
 
 ```[(ngModel)]``` is Angular's two-way data binding syntax. ```ngModel``` is a valid Angular directive, but not available by default. It belongs to the optional ```FormsModule``` and you must opt-in to using it.
+```<li *ngFor="let hero of heroes">``` The *ngFor is Angular's repeater directive. It repeats the host element for each element in a list. <li> is the host element.
