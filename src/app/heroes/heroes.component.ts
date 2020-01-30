@@ -9,6 +9,10 @@ import {Hero} from './hero';
 })
 export class HeroesComponent implements OnInit {
   heroes = HEROES;
+  selectedHero: Hero; /* no selected hero when app starts */
+  onSelect(hero: Hero): void { /*assigns the clicked hero from the template to the component's selectedHero*/
+    this.selectedHero = hero;
+  }
 
   constructor() { }
 
