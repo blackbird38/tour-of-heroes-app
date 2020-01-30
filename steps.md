@@ -48,3 +48,4 @@ Toggle a CSS style class with a class binding: ```[class.selected]="hero === sel
 Why? Components should focus on presenting data and delegate data access to a service. Services are a great way to share information among classes that don't know each other.
 
 #### ```ng generate service hero```
+To learn more about providers, see [Providers](https://angular.io/guide/providers). To learn more about injectors, see the [Dependency Injection guide](https://angular.io/guide/dependency-injection).
