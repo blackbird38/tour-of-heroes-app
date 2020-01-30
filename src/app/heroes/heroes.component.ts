@@ -9,10 +9,6 @@ import {Hero} from '../hero';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
-  selectedHero: Hero; /* no selected hero when app starts */
-  onSelect(hero: Hero): void { /*assigns the clicked hero from the template to the component's selectedHero*/
-    this.selectedHero = hero;
-  }
 
   /*Reserve the constructor for simple initialization such as wiring constructor parameters
   to properties. The constructor shouldn't do anything. It certainly shouldn't call a
