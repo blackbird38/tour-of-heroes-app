@@ -68,3 +68,8 @@ Summary
 * created a MessageService for loosely-coupled communication between classes.
 * The HeroService injected into a component is created with another injected service, MessageService.
 
+### 4. Routing
+#### ```ng generate module app-routing --flat --module=app```
+* --flat puts the file in src/app instead of its own folder.
+* --module=app tells the CLI to register it in the imports array of the AppModule
+
