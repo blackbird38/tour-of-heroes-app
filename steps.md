@@ -28,3 +28,5 @@ The ```ngOnInit()``` is a lifecycle hook. Angular calls ```ngOnInit()``` shortly
 
 ```[(ngModel)]``` is Angular's two-way data binding syntax. ```ngModel``` is a valid Angular directive, but not available by default. It belongs to the optional ```FormsModule``` and you must opt-in to using it.
 ```<li *ngFor="let hero of heroes">``` The *ngFor is Angular's repeater directive. It repeats the host element for each element in a list. <li> is the host element.
+
+You define private styles either inline in the ```@Component.styles``` array or as stylesheet file(s) identified in the ```@Component.styleUrls``` array.
