@@ -42,4 +42,9 @@ export class HeroDetailComponent implements OnInit {
   goBack(): void {
     this.location.back(); /*the Location service that you injected in the constructor*/
   }
+
+  save(): void {
+    this.heroService.updateHero(this.hero)
+      .subscribe(() => this.goBack());
+  }
 }
