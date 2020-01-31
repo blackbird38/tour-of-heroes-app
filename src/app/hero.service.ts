@@ -49,12 +49,18 @@ export class HeroService {
     handler that can do what it wants with the error.*/
   }
 
-/*Like getHeroes(), getHero() has an asynchronous signature. It returns a mock hero as an Observable,
- using the RxJS of() function.*/
+
+  /** GET hero by id. Will 404 if id not found */
+  /*
+  The server should respond with a single hero rather than an array of heroes.
+  getHero() returns an Observable<Hero> ("an observable of Hero objects") rather than
+  an observable of hero arrays .*/
   getHero(id: number): Observable<Hero> {
-    // TODO: send the message _after_ fetching the hero
-    this.messageService.add(`HeroService: fetched hero id=${id}`);
-    return of(HEROES.find(hero => hero.id === id));
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.get<Hero>(url).pipe(
+      tap(_ => this.log(`fetched hero id=${id}`)),
+      catchError(this.handleError<Hero>(`getHero id=${id}`))
+    );
   }
 
   /** Log a HeroService message with the MessageService */
