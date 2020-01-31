@@ -118,3 +118,11 @@ If you neglect to subscribe(), the service will not send the delete request to t
  A Subject is both a source of observable values and an Observable itself. You can subscribe to a Subject as you would any Observable.
 
  You can also push values into that Observable by calling its next(value) method as the search() method does.
+
+Summary
+* added the necessary dependencies to use HTTP in the app.
+* refactored HeroService to load heroes from a web API.
+* extended HeroService to support post(), put(), and delete() methods.
+* updated the components to allow adding, editing, and deleting of heroes.
+* configured an in-memory web API.
+* learned how to use observables.
