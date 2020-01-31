@@ -94,7 +94,15 @@ After installing the module, the app will make requests to and receive responses
 #### ```npm install angular-in-memory-web-api --save```
 #### ```ng generate service InMemoryData```
 
+### HttpClient methods return one value
 
+All HttpClient methods return an RxJS Observable of something.
+HTTP is a request/response protocol. You make a request, it returns a single response.
+In general, an observable can return multiple values over time. An observable from HttpClient always emits a single value and then completes, never to emit again.
 
+HttpClient.get() returns response data
+HttpClient.get() returns the body of the response as an untyped JSON object by default. Applying the optional type specifier, <Hero[]> , gives you a typed result object.
+The server's data API determines the shape of the JSON data. The Tour of Heroes data API returns the hero data as an array.
+Other APIs may bury the data that you want within an object. You might have to dig that data out by processing the Observable result with the RxJS map() operator.
 
 

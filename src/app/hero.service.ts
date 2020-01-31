@@ -34,7 +34,9 @@ export class HeroService {
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  /*to return the mock heroes*/
+  /** GET heroes from the server */
+  /*This particular HttpClient.get() call returns an Observable<Hero[]>; that is,
+  "an observable of hero arrays". In practice, it will only return a single hero array.*/
   getHeroes(): Observable<Hero[]> {
     // TODO: send the message _after_ fetching the heroes
     return this.http.get<Hero[]>(this.heroesUrl);
