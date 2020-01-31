@@ -109,3 +109,12 @@ Other APIs may bury the data that you want within an object. You might have to d
 To catch errors, you "pipe" the observable result from http.get() through an RxJS catchError() operator.
 
 If you neglect to subscribe(), the service will not send the delete request to the server. As a rule, an Observable does nothing until something subscribes.
+
+#### ```ng generate component hero-search```
+ The $ is a convention that indicates heroes$ is an Observable, not an array.
+ heroes$: Observable<Hero[]>;
+ 
+  private searchTerms = new Subject<string>(); - The searchTerms property is an RxJS Subject.
+ A Subject is both a source of observable values and an Observable itself. You can subscribe to a Subject as you would any Observable.
+
+ You can also push values into that Observable by calling its next(value) method as the search() method does.
