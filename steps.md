@@ -126,3 +126,8 @@ Summary
 * updated the components to allow adding, editing, and deleting of heroes.
 * configured an in-memory web API.
 * learned how to use observables.
+
+#Deploy an Angular Application to GitHub
+npm i angular-cli-ghpages --save-dev
+ng build --prod --base-href "https://blackbird38.github.io/tour-of-heroes-app/"
+npx ngh --no-silent --dir=dist/tour-of-heroes-app
