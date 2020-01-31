@@ -129,5 +129,7 @@ Summary
 
 # Deploy an Angular Application to GitHub
 ```npm i angular-cli-ghpages --save-dev```
+
 ```ng build --prod --base-href "https://blackbird38.github.io/tour-of-heroes-app/"```
+
 ```npx ngh --no-silent --dir=dist/tour-of-heroes-app```
