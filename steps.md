@@ -105,4 +105,5 @@ HttpClient.get() returns the body of the response as an untyped JSON object by d
 The server's data API determines the shape of the JSON data. The Tour of Heroes data API returns the hero data as an array.
 Other APIs may bury the data that you want within an object. You might have to dig that data out by processing the Observable result with the RxJS map() operator.
 
-
+### Error handling
+To catch errors, you "pipe" the observable result from http.get() through an RxJS catchError() operator.

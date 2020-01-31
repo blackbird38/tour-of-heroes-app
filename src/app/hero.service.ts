@@ -10,6 +10,7 @@ with the @Injectable() decorator. This marks the class as one that participates 
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
 import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 import { Observable, of } from 'rxjs';
@@ -39,7 +40,13 @@ export class HeroService {
   "an observable of hero arrays". In practice, it will only return a single hero array.*/
   getHeroes(): Observable<Hero[]> {
     // TODO: send the message _after_ fetching the heroes
-    return this.http.get<Hero[]>(this.heroesUrl);
+    return this.http.get<Hero[]>(this.heroesUrl)
+      .pipe(
+        tap(_ => this.log('fetched heroes')),
+        catchError(this.handleError<Hero[]>('getHeroes', []))
+      );
+    /*The catchError() operator intercepts an Observable that failed. It passes the error an error
+    handler that can do what it wants with the error.*/
   }
 
 /*Like getHeroes(), getHero() has an asynchronous signature. It returns a mock hero as an Observable,
@@ -54,4 +61,31 @@ export class HeroService {
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
   }
+
+  /*Instead of handling the error directly, it returns an error handler
+  function to catchError that it has configured with both the name of the operation
+  that failed and a safe return value.*/
+  /**
+   * Handle Http operation that failed.
+   * Let the app continue.
+   * @param operation - name of the operation that failed
+   * @param result - optional value to return as the observable result
+   */
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      // TODO: better job of transforming error for user consumption
+      this.log(`${operation} failed: ${error.message}`);
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+  /*After reporting the error to the console, the handler constructs a user friendly message
+  and returns a safe value to the app so the app can keep working.
+  Because each service method returns a different kind of Observable result, handleError()
+  takes a type parameter so it can return the safe value as the type that the app expects.*/
 }
