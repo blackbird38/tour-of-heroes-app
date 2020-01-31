@@ -107,3 +107,5 @@ Other APIs may bury the data that you want within an object. You might have to d
 
 ### Error handling
 To catch errors, you "pipe" the observable result from http.get() through an RxJS catchError() operator.
+
+If you neglect to subscribe(), the service will not send the delete request to the server. As a rule, an Observable does nothing until something subscribes.
