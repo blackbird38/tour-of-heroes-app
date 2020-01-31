@@ -85,8 +85,13 @@ Summary
 
 
 ### 6. HTTP
+
 HttpClient is Angular's mechanism for communicating with a remote server over HTTP.
 Make HttpClient available everywhere in the app in two steps. First, add it to the root AppModule by importing it. Next, still in the AppModule, add HttpClient to the imports array.
+
+[the In-memory Web API module](https://github.com/angular/in-memory-web-api)
+After installing the module, the app will make requests to and receive responses from the HttpClient without knowing that the In-memory Web API is intercepting those requests, applying them to an in-memory data store, and returning simulated responses.
+#### ```npm install angular-in-memory-web-api --save```
 
 
 
