@@ -92,6 +92,7 @@ Make HttpClient available everywhere in the app in two steps. First, add it to t
 [the In-memory Web API module](https://github.com/angular/in-memory-web-api)
 After installing the module, the app will make requests to and receive responses from the HttpClient without knowing that the In-memory Web API is intercepting those requests, applying them to an in-memory data store, and returning simulated responses.
 #### ```npm install angular-in-memory-web-api --save```
+#### ```ng generate service InMemoryData```
 
 
 
